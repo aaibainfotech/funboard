@@ -1,0 +1,14 @@
+<div class="card">
+    <h1>LEARN ABCD <br> Ⓐ TO ⓩ</h1>
+
+    <!-- Letters Grid -->
+    <div class="letters-grid">
+        <span *ngFor="let letter of letters" (click)="playSound(letter)">
+      {{ letter }}
+    </span>
+    </div>
+
+    <button routerLink="/home" routerLinkActive="active" class="back-button">⬅️ Back to Home</button>
+    <button routerLink="/next-level" routerLinkActive="active" class="next-button">Next Level ➡️</button>
+
+</div>

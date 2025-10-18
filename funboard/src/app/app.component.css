@@ -1,0 +1,54 @@
+/* ll */
+
+
+/* <div class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-white to-gray-100 p-6">
+    <!-- Title -->
+    <h1 class="text-5xl font-extrabold text-blue-600 mb-4 animate-bounce drop-shadow-lg">
+        FunLearningforKids
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="text-lg font-semibold text-gray-700 mb-10">
+        Control Campus
+    </p>
+
+    <!-- Buttons Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+
+        <!-- Learn ABCD -->
+        <button class="bg-yellow-400 hover:bg-yellow-500 shadow-lg rounded-full px-8 py-6 font-bold text-white text-xl transition">
+      🅰️🅱️ Learn ABCD
+    </button>
+
+        <!-- Learn Animals -->
+        <button class="bg-green-500 hover:bg-green-600 shadow-lg rounded-full px-8 py-6 font-bold text-white text-xl transition">
+      🐶🐱 Learn Animals
+    </button>
+
+        <!-- Learn Numbers -->
+        <button class="bg-blue-500 hover:bg-blue-600 shadow-lg rounded-full px-8 py-6 font-bold text-white text-xl transition">
+      🔢 Learn Numbers
+    </button>
+
+        <!-- Draw It -->
+        <button class="bg-purple-600 hover:bg-purple-700 shadow-lg rounded-full px-8 py-6 font-bold text-white text-xl transition">
+      ✏️ Draw It!
+    </button>
+
+        <!-- Learn Math -->
+        <button class="bg-red-500 hover:bg-red-600 shadow-lg rounded-full px-8 py-6 font-bold text-white text-xl transition">
+      ➕ Learn Math
+    </button>
+
+        <!-- Learn Poems -->
+        <button class="bg-orange-500 hover:bg-orange-600 shadow-lg rounded-full px-8 py-6 font-bold text-white text-xl transition">
+      📚 Learn Poems
+    </button>
+
+    </div>
+
+    <!-- Footer -->
+    <p class="mt-10 text-gray-600 font-medium">
+        © 2025 CC
+    </p>
+</div> */
