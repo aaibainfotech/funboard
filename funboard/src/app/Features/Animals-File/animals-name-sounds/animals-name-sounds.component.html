@@ -1,0 +1,35 @@
+<div class="min-h-screen flex flex-col items-center justify-center bg-cover bg-center bg-fixed p-4 sm:p-6 md:p-10" style="background-image: url('assets/Background/Animals-bg.jpg')">
+    <div class="bg-white/90 rounded-3xl shadow-2xl text-center p-6 sm:p-8 md:p-10 w-full max-w-6xl">
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-10 text-red-700">
+            🐾 LEARN ANIMAL NAMES & SOUNDS 🐾
+        </h1>
+
+        <!-- Animals Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8 justify-items-center mb-10">
+            <span *ngFor="let animal of animals; let i = index" (click)="playSound(animal)" class="flex flex-col items-center bg-gradient-to-b from-lime-300 to-amber-500 text-white p-5 sm:p-6 md:p-8 rounded-3xl shadow-md hover:scale-105 hover:shadow-xl transition-all cursor-pointer select-none">
+        <img
+          [src]="'assets/animals-name-images/' + animal + '.webp'"
+          [alt]="animal"
+          class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 object-contain rounded-xl mb-4"
+        />
+        <p
+          class="text-xl sm:text-2xl md:text-3xl font-bold capitalize drop-shadow-lg"
+        >
+          {{ animal }}
+        </p>
+      </span>
+        </div>
+
+        <!-- Buttons -->
+        <div class="mt-6 flex flex-col sm:flex-row justify-center items-center sm:space-x-4 space-y-3 sm:space-y-0">
+            <button routerLink="/home" routerLinkActive="active" class="px-6 py-3 rounded-full bg-green-500 text-white font-semibold text-base sm:text-lg shadow-md hover:scale-105 hover:shadow-xl transition-all w-44 sm:w-auto">
+        ⬅️ Back to Home
+      </button>
+
+            <button routerLink="/next-level" routerLinkActive="active" class="px-6 py-3 rounded-full bg-indigo-900 text-white font-semibold text-base sm:text-lg shadow-md hover:scale-105 hover:shadow-xl transition-all w-44 sm:w-auto">
+        Next Level ➡️
+      </button>
+        </div>
+    </div>
+</div>

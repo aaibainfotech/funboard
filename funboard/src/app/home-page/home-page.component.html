@@ -1,18 +1,43 @@
-<div class="card">
-    <h1 class="bounce-text">
-        <span>F</span><span>u</span><span>n</span><span>L</span><span>e</span><span>a</span><span>r</span><span>n</span><span>i</span><span>n</span><span>g</span><span>f</span><span>o</span><span>r</span><span>K</span><span>i</span><span>d</span><span>s</span>
-    </h1>
-    <h2>Control Campus</h2>
+<div class="min-h-screen bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center">
+    <div class="bg-white bg-opacity-90 backdrop-blur-md shadow-2xl rounded-3xl p-10 w-[100%] max-w-6xl text-center">
 
-    <div class="button-grid">
-        <button class="yellow" [routerLink]="'/abcd'" routerLinkActive="active">🅰️🅱️ Learn ABCD</button>
-        <button class="green" [routerLink]="'/animals'" routerLinkActive="active">🐶🐱 Learn Animals</button>
-        <button class="blue" [routerLink]="'/numbers'" routerLinkActive="active">🔢 Learn Numbers</button>
-        <button class="purple" [routerLink]="'/draw'" routerLinkActive="active">✍️ Draw It!</button>
-        <button class="red" [routerLink]="'/math'" routerLinkActive="active">➕ Learn Math</button>
-        <button class="orange" [routerLink]="'/poems'" routerLinkActive="active">📚 Learn Poems</button>
+        <!-- Title -->
+        <h1 class="text-5xl font-extrabold text-blue-700 mb-3 bounce-text">
+            <span class="inline-block animate-bounce">F</span>
+            <span class="inline-block animate-bounce delay-100">u</span>
+            <span class="inline-block animate-bounce delay-200">n</span>
+            <span class="inline-block animate-bounce delay-300">L</span>
+            <span class="inline-block animate-bounce delay-400">e</span>
+            <span class="inline-block animate-bounce delay-500">a</span>
+            <span class="inline-block animate-bounce delay-600">r</span>
+            <span class="inline-block animate-bounce delay-700">n</span>
+            <span class="inline-block animate-bounce delay-800">i</span>
+            <span class="inline-block animate-bounce delay-900">n</span>
+            <span class="inline-block animate-bounce delay-[1000ms]">g</span>
+            <span class="inline-block animate-bounce delay-[1100ms]">f</span>
+            <span class="inline-block animate-bounce delay-[1200ms]">o</span>
+            <span class="inline-block animate-bounce delay-[1300ms]">r</span>
+            <span class="inline-block animate-bounce delay-[1400ms]">K</span>
+            <span class="inline-block animate-bounce delay-[1500ms]">i</span>
+            <span class="inline-block animate-bounce delay-[1600ms]">d</span>
+            <span class="inline-block animate-bounce delay-[1700ms]">s</span>
+        </h1>
+
+
+
+        <h2 class="text-gray-700 font-medium text-lg mb-8">Control Campus</h2>
+
+        <!-- Buttons -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center">
+            <button routerLink="/abcd" class="py-6 w-[350px] bg-yellow-400 text-white font-bold text-3xl rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-transform">🅰️🅱️ Learn ABCD</button>
+            <button routerLink="/animals" class="py-6 w-[350px] bg-green-500 text-white font-bold text-3xl rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-transform">🐶🐱 Learn Animals</button>
+            <button routerLink="/numbers" class="py-6 w-[350px] bg-blue-500 text-white font-bold text-3xl rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-transform">🔢 Learn Numbers</button>
+            <button routerLink="/drawing" class="py-6 w-[350px] bg-purple-600 text-white font-bold text-3xl rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-transform">✍️ Draw It!</button>
+            <button routerLink="/math" class="py-6 w-[350px] bg-red-500 text-white font-bold text-3xl  rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-transform">➕ Learn Math</button>
+            <button routerLink="/poems" class="py-6 w-[350px] bg-orange-500 text-white font-bold text-3xl rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-transform">📚 Learn Poems</button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-sm text-gray-600 mt-8">© 2025 CC</footer>
     </div>
-
-
-    <footer>© 2025 CC</footer>
 </div>
