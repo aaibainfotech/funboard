@@ -1,1 +1,55 @@
-<p>math works!</p>
+<div class="min-h-screen flex flex-col items-center justify-center bg-cover bg-center bg-fixed p-4 sm:p-6 md:p-10" style="background-image: url('assets/Background/Animals-bg.jpg')">
+
+    <div class="bg-lime-100 backdrop-blur-md rounded-2xl shadow-lg shadow-gray-900 text-center p-6 sm:p-8 md:p-10 w-full max-w-6xl border border-white/50">
+
+        <!-- Title -->
+        <h1 class="text-5xl sm:text-6xl font-extrabold  bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 drop-shadow-md tracking-wider animate-bounce mb-10" style="font-family: 'Comic Neue', cursive;">
+            🧮 Fun with Numbers 💡
+        </h1>
+
+
+        <!-- Operation Buttons -->
+        <div class="flex flex-wrap justify-center gap-6 mb-8">
+            <button (click)="generateQuestion('add')" class="px-6 py-4 bg-gradient-to-r from-purple-800 to-gray-700 text-white text-xl rounded-3xl shadow-lg hover:scale-110 hover:shadow-2xl transition-transform duration-200">
+        ➕ Addition 🔢
+      </button>
+            <button (click)="generateQuestion('subtract')" class="px-6 py-4 bg-gradient-to-r from-red-400 to-pink-600 text-white text-xl rounded-3xl shadow-lg hover:scale-110 hover:shadow-2xl transition-transform duration-200">
+        ➖ Subtraction 🧠
+      </button>
+            <button (click)="generateQuestion('multiply')" class="px-6 py-4 bg-gradient-to-r from-green-400 to-teal-600 text-white text-xl rounded-3xl shadow-lg hover:scale-110 hover:shadow-2xl transition-transform duration-200">
+        ✖ Multiply 🎯
+      </button>
+            <button (click)="generateQuestion('divide')" class="px-6 py-4 bg-gradient-to-r from-pink-500 to-purple-900 text-white text-xl rounded-3xl shadow-lg hover:scale-110 hover:shadow-2xl transition-transform duration-200">
+        ➗ Divide 🏆
+      </button>
+        </div>
+
+        <!-- Question Display -->
+        <div *ngIf="currentQuestion" class="mb-8 text-4xl sm:text-5xl font-extrabold text-indigo-900 ">
+            🔢 {{ currentQuestion.num1 }} {{ currentQuestion.operation === 'add' ? '+' : currentQuestion.operation === 'subtract' ? '-' : currentQuestion.operation === 'multiply' ? '×' : '÷' }} {{ currentQuestion.num2 }} = ❓
+        </div>
+
+        <!-- Buttons for Answer & Next -->
+        <div *ngIf="currentQuestion" class="flex justify-center gap-6 mb-6">
+            <button (click)="revealAnswer()" class="px-6 py-3 bg-green-500 text-white text-xl rounded-2xl shadow-md hover:bg-green-600 hover:scale-110 transition-transform duration-200 ">
+        ✅ Show Answer ✨
+      </button>
+            <button (click)="nextQuestion()" class="px-6 py-3 bg-blue-500 text-white text-xl rounded-2xl shadow-md hover:bg-blue-600 hover:scale-110 transition-transform duration-200">
+        🔄 Next Question 🎉
+      </button>
+        </div>
+
+        <!-- Answer Display -->
+        <div *ngIf="showAnswer" class="text-3xl sm:text-4xl font-extrabold text-red-600 animate-bounce">
+            🏆 Answer: {{ currentQuestion?.answer }} 🎯
+        </div>
+
+        <!-- Back Button -->
+        <div class="mt-6">
+            <button routerLink="/home" routerLinkActive="active" class="px-8 py-4 rounded-full bg-gradient-to-r from-green-800 to-green-800 text-white font-bold text-xl shadow-lg hover:scale-110 hover:shadow-2xl transition-transform duration-200">
+         Back to Home 🏠
+      </button>
+        </div>
+
+    </div>
+</div>

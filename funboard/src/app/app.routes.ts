@@ -18,7 +18,7 @@ export const routes: Routes = [
     { path: "abcd", component: ABCDComponent },
     { path: "abcd-next-level", component: AbcdWordsComponent },
     { path: "animals", component: AnimalsComponent },
-    { path: "animals-name-sounds", component: AnimalsNameSoundsComponent },
+    { path: "animals-next-level", component: AnimalsNameSoundsComponent },
     { path: "numbers", component: NumbersComponent },
     { path: "numbers-next-level", component: NumbersNextComponent },
     { path: "drawing", component: DrawingComponent },

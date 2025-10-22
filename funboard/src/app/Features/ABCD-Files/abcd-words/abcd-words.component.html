@@ -1,10 +1,11 @@
-<div class="min-h-screen flex flex-col items-center justify-center bg-cover bg-center bg-fixed p-4 sm:p-6 md:p-10">
-    <div class="bg-white/90 rounded-3xl shadow-2xl text-center p-6 sm:p-8 md:p-10 w-full max-w-6xl">
-        <!-- Title -->
-        <h1 id="titleName" class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-indigo-900 mb-10 leading-snug">
-            🅰️ LEARN ABCD WORDS <br /> Ⓐ TO ⓩ 📖
-        </h1>
+<div class="min-h-screen flex flex-col items-center justify-center bg-cover bg-center bg-fixed p-4 sm:p-6 md:p-10" style="background-image: url('assets/Background/Animals-bg.jpg')">
 
+    <div class="bg-lime-100 backdrop-blur-md rounded-2xl shadow-lg shadow-gray-900 text-center p-6 sm:p-8 md:p-10 w-full max-w-6xl border border-white/50">
+
+        <!-- Title -->
+        <h1 class="text-5xl sm:text-6xl font-extrabold  bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 drop-shadow-md tracking-wider animate-bounce mb-10" style="font-family: 'Comic Neue', cursive;">
+            🔤 Play with Letters 🐶
+        </h1>
         <!-- Letters Grid -->
         <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-4 sm:gap-6 justify-items-center mb-10">
             <span *ngFor="let letter of letters" (click)="playSound(letter)" class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center text-white text-2xl sm:text-3xl md:text-4xl font-bold rounded-full shadow-md hover:scale-110 hover:shadow-xl transition-all cursor-pointer select-none"
