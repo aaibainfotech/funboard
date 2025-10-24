@@ -9,6 +9,8 @@ import { AbcdWordsComponent } from './Features/ABCD-Files/abcd-words/abcd-words.
 import { AnimalsComponent } from './Features/Animals-File/animals/animals.component';
 import { AnimalsNameSoundsComponent } from './Features/Animals-File/animals-name-sounds/animals-name-sounds.component';
 import { NumbersNextComponent } from './Features/Numbers-File/numbers-next/numbers-next.component';
+import { FruitsComponent } from './Features/fruits/fruits.component';
+import { ColorsComponent } from './Features/colors/colors.component';
 
 
 export const routes: Routes = [
@@ -24,7 +26,8 @@ export const routes: Routes = [
     { path: "drawing", component: DrawingComponent },
     { path: "math", component: MathComponent },
     { path: "poems", component: PoemsComponent },
-
+    { path: "fruits", component: FruitsComponent },
+    { path: "colors", component: ColorsComponent },
 
 
 ];
