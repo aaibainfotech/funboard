@@ -3,7 +3,7 @@
     <div class="bg-lime-100 backdrop-blur-md rounded-2xl shadow-lg shadow-gray-900 text-center p-6 sm:p-8 md:p-10 w-full max-w-6xl border border-white/50">
 
         <!-- Title -->
-        <h1 class="text-5xl sm:text-6xl font-extrabold  bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 drop-shadow-md tracking-wider animate-bounce mb-10" style="font-family: 'Comic Neue', cursive;">
+        <h1 class="text-5xl sm:text-6xl font-extrabold  bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 drop-shadow-md tracking-wider  mb-10" style="font-family: 'Comic Neue', cursive;">
             🐾 Meet the Animals 🦋
         </h1>
 
@@ -12,19 +12,21 @@
             <span *ngFor="let animal of animals; let i = index" (click)="playSound(animal)" class="flex flex-col items-center 
                bg-gradient-to-br from-pink-100 via-lime-100 to-blue-100
                text-gray-700 font-bold
-               p-6 sm:p-8 md:p-10 
-               rounded-3xl shadow-md shadow-gray-900
+               p-4 sm:p-4 md:p-4
+               rounded-2xl shadow-md shadow-gray-900
                hover:scale-110 hover:shadow-lg 
                transition-transform duration-300 ease-out cursor-pointer select-none">
         
         <img
           [src]="'assets/animals-name-images/' + animal + '.webp'"
-          [alt]="animal"
-          class="w-24 h-24 sm:w-34 sm:h-34 md:w-46 md:h-46 
-                 object-contain rounded-2xl mb-4 drop-shadow-md"
+          [alt]="animal" 
+    
+               class="w-24 h-24 sm:w-34 sm:h-34 md:w-48 md:h-48 
+                 rounded-lg mb-4 drop-shadow-md"
+
         />
 
-        <p class="text-xl sm:text-2xl md:text-3xl font-bold capitalize text-gray-800 drop-shadow-sm">
+        <p class="text-xl sm:text-2xl md:text-2xl font-bold capitalize text-gray-800 drop-shadow-sm">
           {{ animal }}
         </p>
       </span>
