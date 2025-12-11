@@ -9,6 +9,7 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './abcd.component.css'
 })
 export class ABCDComponent {
+  public currentAudio: HTMLAudioElement | null = null;
 
   ngOnInit() {
     const audio = new Audio(`assets/char-sounds/LEARN ABCD.mp3`);
@@ -20,10 +21,32 @@ export class ABCDComponent {
   // Letters A-Z
   letters: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
-  playSound(letter: string) {
-    const audio = new Audio(`assets/char-sounds/${letter}.wav`);
-    audio.play();
+  /**
+   * @description: to play the sound
+   */
+  // playSound(letter: string) {
+  //   console.log("letter", letter);
+  //   let audio;
+  //   audio = new Audio(`assets/char-sounds/${letter}.wav`);
+  //   audio.play();
+  // }
 
+
+  playSound(letter: string) {
+    // Stop previous audio if still playing
+    if (this.currentAudio) {
+      console.log("stop sound is executing")
+      this.currentAudio.pause();
+      this.currentAudio.currentTime = 0; // rewind to start
+    }
+
+    // Create new audio
+    this.currentAudio = new Audio(`assets/char-sounds/${letter}.wav`);
+
+    // Play new audio
+    this.currentAudio.play().catch(err => {
+      console.error("Audio play error:", err);
+    });
   }
 
 

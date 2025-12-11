@@ -10,6 +10,10 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./fruits.component.css']
 })
 export class FruitsComponent {
+
+  // ⭐ Hold currently playing audio
+  currentAudio: HTMLAudioElement | null = null;
+
   fruits = [
     { name: 'Apple', icon: '🍎', audio: 'assets/Fruits/apple.mp3' },
     { name: 'Banana', icon: '🍌', audio: 'assets/Fruits/banana.mp3' },
@@ -23,8 +27,16 @@ export class FruitsComponent {
     { name: 'Cherry', icon: '🍒', audio: 'assets/Fruits/cherry.mp3' },
   ];
 
+  // ⭐ Play sound with STOP previous logic
   playSound(audioPath: string) {
-    const audio = new Audio(audioPath);
-    audio.play();
+    // Stop currently playing audio
+    if (this.currentAudio) {
+      this.currentAudio.pause();
+      this.currentAudio.currentTime = 0;
+    }
+
+    // Play new audio
+    this.currentAudio = new Audio(audioPath);
+    this.currentAudio.play().catch(err => console.log("Audio error:", err));
   }
 }

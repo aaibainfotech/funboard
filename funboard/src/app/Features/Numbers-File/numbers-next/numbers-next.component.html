@@ -1,6 +1,20 @@
 <div class="min-h-screen flex flex-col items-center justify-center bg-cover bg-center bg-fixed p-4 sm:p-6 md:p-10" style="background-image: url('assets/Background/Animals-bg.jpg')">
+    <!-- Buttons -->
+    <div class="mt-8 flex flex-col sm:flex-row justify-center items-center sm:space-x-6 space-y-6 sm:space-y-0">
 
-    <div class="bg-lime-100 backdrop-blur-md rounded-2xl shadow-lg shadow-gray-900 text-center p-6 sm:p-8 md:p-10 w-full max-w-6xl border border-white/50">
+        <button routerLink="/home" routerLinkActive="active" class="px-6 py-3 rounded-full bg-green-500 text-white font-semibold text-base sm:text-lg shadow-md 
+               hover:scale-105 hover:shadow-xl transition-all w-44 sm:w-auto">
+        ⬅️ Back to Home
+    </button>
+
+        <button routerLink="/numbers" routerLinkActive="active" class="px-6 py-3 rounded-full bg-indigo-900 text-white font-semibold text-base sm:text-lg shadow-md 
+               hover:scale-105 hover:shadow-xl transition-all w-44 sm:w-auto">
+        Basic Level ⬅️
+    </button>
+
+    </div>
+
+    <div class="bg-lime-100 mt-4 backdrop-blur-md rounded-2xl shadow-lg shadow-gray-900 text-center p-6 sm:p-8 md:p-10 w-full max-w-6xl border border-white/50">
 
         <!-- Title -->
         <h1 class="text-5xl sm:text-6xl font-extrabold  bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 drop-shadow-md tracking-wider animate-bounce mb-10" style="font-family: 'Comic Neue', cursive;">
@@ -16,15 +30,6 @@
       </span>
         </div>
 
-        <!-- Buttons -->
-        <div class="mt-6 flex flex-col sm:flex-row justify-center items-center sm:space-x-4 space-y-3 sm:space-y-0">
-            <button routerLink="/home" routerLinkActive="active" class="px-6 py-3 rounded-full bg-green-500 text-white font-semibold text-base sm:text-lg shadow-md hover:scale-105 hover:shadow-xl transition-all w-44 sm:w-auto">
-        ⬅️ Back to Home
-      </button>
 
-            <button routerLink="/numbers" routerLinkActive="active" class="px-6 py-3 rounded-full bg-indigo-900 text-white font-semibold text-base sm:text-lg shadow-md hover:scale-105 hover:shadow-xl transition-all w-44 sm:w-auto">
-        Basic Level ⬅️ 
-      </button>
-        </div>
     </div>
 </div>

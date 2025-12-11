@@ -12,64 +12,44 @@ export class AnimalsNameSoundsComponent {
 
   constructor(private router: Router) { }
 
-  currentImage: string | null = null; // holds the image path
-
+  currentImage: string | null = null;
+  currentAudio: HTMLAudioElement | null = null; // ⭐ holds currently playing audio
 
   animals = [
-    'Cat',
-    'Dog',
-    'Cow',
-    'Sheep',
-    'Goat',
-    'Horse',
-    'Duck',
-    'Birds',
-    'Hen',
-    'Loin',
-    'Tiger',
-    'Elephant',
-    'Deer',
-    'Monkey',
-    'Snake',
-    'Rabbit',
-    'Pig',
-    'Bird',
-    'Donkey',
-    'Wolf',
-    'Bee',
-    'Mouse',
-    'Bear',
-    'Parrot',
-    'Crow',
-    'Owl',
-    'Peacock',
-    'Cheetah'
+    'Cat', 'Dog', 'Cow', 'Sheep', 'Goat', 'Horse', 'Duck', 'Birds',
+    'Hen', 'Loin', 'Tiger', 'Elephant', 'Deer', 'Monkey', 'Snake',
+    'Rabbit', 'Pig', 'Bird', 'Donkey', 'Wolf', 'Bee', 'Mouse',
+    'Bear', 'Parrot', 'Crow', 'Owl', 'Peacock', 'Cheetah'
   ];
 
   imagePaths: string[] = [];
 
   ngOnInit() {
-    // Generate all image paths dynamically
+    // Generate image paths automatically
     this.imagePaths = this.animals.map(animal =>
       `assets/animals-name-images/${animal}.webp`
     );
 
-    const audio = new Audio(`assets/animals-name-sounds/Learn Animals Sounds.mp3`);
-    audio.play();
-
+    // ⭐ Play intro sound using stop-previous logic
+    this.playAudio(`assets/animals-name-sounds/Learn Animals Sounds.mp3`);
   }
 
+  // ⭐ UNIVERSAL AUDIO FUNCTION (STOP + PLAY)
+  playAudio(path: string) {
+    // Stop previous sound if playing
+    if (this.currentAudio) {
+      this.currentAudio.pause();
+      this.currentAudio.currentTime = 0; // reset position
+    }
 
+    // Start new sound
+    this.currentAudio = new Audio(path);
+    this.currentAudio.play().catch(err => console.log("Audio error:", err));
+  }
 
-
+  // ⭐ Play animal sound + change image
   playSound(animal: string) {
-    // Play the sound
-    const audio = new Audio(`assets/animals-name-sounds/${animal}.mp3`);
-    audio.play().catch(err => console.log('Audio error', err));
-
-    // Show the image for the letter
+    this.playAudio(`assets/animals-name-sounds/${animal}.mp3`);
+    this.currentImage = `assets/animals-name-images/${animal}.webp`;
   }
-
-
-
 }

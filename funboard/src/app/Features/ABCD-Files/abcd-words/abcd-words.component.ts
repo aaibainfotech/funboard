@@ -4,32 +4,46 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-abcd-words',
+  standalone: true,
   imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './abcd-words.component.html',
-  styleUrls: ['./abcd-words.component.css'] // fixed from styleUrl to styleUrls
+  styleUrls: ['./abcd-words.component.css']
 })
 export class AbcdWordsComponent {
 
   letters: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-  currentImage: string | null = null; // holds the image path
+  currentImage: string | null = null;
+
+  currentAudio: HTMLAudioElement | null = null;  // <-- ADDED
 
   constructor(private router: Router) { }
 
   ngOnInit() {
-    const audio = new Audio('assets/Alphabet-words-sounds/LEARN ABCD WORDS.mp3');
-    audio.play().catch(err => console.log('Autoplay blocked', err));
+    const introAudio = new Audio('assets/Alphabet-words-sounds/LEARN ABCD WORDS.mp3');
+    introAudio.play().catch(err => console.log('Autoplay blocked', err));
   }
 
   playSound(letter: string) {
-    // Play the sound
-    const audio = new Audio(`assets/Alphabet-words-sounds/${letter}.mp3`);
-    audio.play().catch(err => console.log('Audio error', err));
 
-    // Show the image for the letter
-    this.currentImage = `assets/Alphabet-words-images/${letter}.webp`; // make sure images are in this folder
+    // 🔴 Stop previous audio if playing
+    if (this.currentAudio) {
+      console.log("Stopping previous sound...");
+      this.currentAudio.pause();
+      this.currentAudio.currentTime = 0;
+    }
+
+    // 🔊 Play new audio
+    this.currentAudio = new Audio(`assets/Alphabet-words-sounds/${letter}.mp3`);
+
+    this.currentAudio.play().catch(err => {
+      console.error("Audio play error:", err);
+    });
+
+    // 🖼️ Update Image
+    this.currentImage = `assets/Alphabet-words-images/${letter}.webp`;
   }
 
-  // Random color generator for each letter
+  // Random color generator (unchanged)
   getRandomColor(letter: string): string {
     const colors = [
       '#FF5733', '#33FF57', '#3357FF', '#F333FF', '#FFD133',
@@ -42,5 +56,4 @@ export class AbcdWordsComponent {
     const index = letter.charCodeAt(0) % colors.length;
     return colors[index];
   }
-
 }

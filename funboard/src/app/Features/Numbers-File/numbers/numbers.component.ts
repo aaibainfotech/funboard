@@ -14,12 +14,23 @@ export class NumbersComponent {
 
   numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  playSound(letter: number) {
-    const audio = new Audio(`assets/Learn Numbers/${letter}.mp3`);
-    audio.play();
+  // ⭐ Holds current audio
+  currentAudio: HTMLAudioElement | null = null;
+
+  // ⭐ Play sound with STOP previous logic
+  playSound(num: number) {
+    // Stop previous audio if playing
+    if (this.currentAudio) {
+      this.currentAudio.pause();
+      this.currentAudio.currentTime = 0;
+    }
+
+    // Play new audio
+    this.currentAudio = new Audio(`assets/Learn Numbers/${num}.mp3`);
+    this.currentAudio.play().catch(err => console.log("Audio error:", err));
   }
 
-
+  // UI random color generator
   getRandomColor(num: number): string {
     const colors = [
       '#FF5733', '#33B5E5', '#FFB300', '#00C851', '#AA66CC',
@@ -27,6 +38,4 @@ export class NumbersComponent {
     ];
     return colors[(num - 1) % colors.length];
   }
-
-
 }

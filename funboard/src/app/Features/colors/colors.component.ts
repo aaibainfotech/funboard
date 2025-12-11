@@ -12,6 +12,9 @@ export class ColorsComponent {
 
   constructor(private router: Router) { }
 
+  // ⭐ Current playing audio reference
+  currentAudio: HTMLAudioElement | null = null;
+
   colors = [
     { name: 'Red', icon: '🍎' },
     { name: 'Blue', icon: '🔵' },
@@ -25,12 +28,18 @@ export class ColorsComponent {
     { name: 'White', icon: '☁️' },
   ];
 
+  // ⭐ Stop previous + play new audio
   playSounds(color: string) {
+    // Stop previous audio if playing
+    if (this.currentAudio) {
+      this.currentAudio.pause();
+      this.currentAudio.currentTime = 0;
+    }
 
-    const audio = new Audio(`assets/Colors/${color}.mp3`);
-    audio.play();
-
+    // Play new audio
+    this.currentAudio = new Audio(`assets/Colors/${color}.mp3`);
+    this.currentAudio.play().catch(err =>
+      console.log("Audio play error:", err)
+    );
   }
-
-
 }
